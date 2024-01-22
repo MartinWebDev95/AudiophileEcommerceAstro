@@ -1,0 +1,50 @@
+---
+const { href, type } = Astro.props;
+---
+
+<a href={href} class="link" data-type={type}>
+  <slot />
+</a>
+
+<style>
+  .link{
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: bold;
+    width: fit-content;
+    transition: all .2s ease-in-out;
+  }
+
+  .link[data-type="primary"]{
+    background-color: var(--orange);
+  }
+
+  .link[data-type="secondary"]{
+    background-color: transparent;
+    color: var(--black);
+    border: 1px solid var(--black);
+  }
+
+  .link[data-type="alternate"]{
+    background-color: var(--black);
+  }
+
+  @media (min-width: 1000px){
+    .link[data-type="primary"]:hover{
+      background-color: var(--lightOrange);
+    }
+
+    .link[data-type="secondary"]:hover{
+      background-color: var(--black);
+      color: var(--white);
+    }
+    
+    .link[data-type="alternate"]:hover{
+      background-color: var(--gray);
+      color: var(--black);
+    }
+  }
+</style>
+

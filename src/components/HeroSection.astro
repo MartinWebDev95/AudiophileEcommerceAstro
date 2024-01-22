@@ -1,0 +1,120 @@
+---
+import Link from "./Link.astro";
+---
+
+<section class="heroSection">
+  <div class="heroContainer">
+    <div class="heroInfo">
+      <p class="infoSubtitle">
+        New Product
+      </p>
+
+      <h1 class="infoTitle">XX99 Mark II Headphones</h1>
+      
+      <p class="infoDescription">
+        Experience natural, lifelike audio and exceptional
+        build quality made for the passionate music enthusiast.
+      </p>
+      
+      <div class="infoLink">
+        <Link href="/headphones/xx99-mark-two-headphones" type="primary">
+          See product  
+        </Link>
+      </div>
+    </div>
+    <div class="heroImage" />
+  </div>
+</section>
+
+<style>
+  .heroSection{
+    border-top: 1px solid var(--darkGray);
+  }
+
+  .heroContainer{
+    position: relative;
+  }
+
+  .heroInfo{
+    padding-block: 8rem;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .heroImage{
+    position: absolute;
+    background-image: url("/assets/home/mobile/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .infoSubtitle{
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: bold;
+    letter-spacing: .5em;
+    text-align: center;
+  }
+
+  .infoTitle{
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
+  }
+
+  .infoDescription{
+    color: var(--white);
+    text-align: center;
+  }
+
+  .infoLink{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 480px){
+    .heroImage{
+      background-image: url("/assets/home/tablet/image-hero.jpg");
+      background-position: center center;
+    }
+
+    .heroInfo{
+      width: 60%;
+    }
+  }
+
+  @media (min-width: 1000px){
+    .heroContainer{
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .heroInfo{
+      width: 40%;
+      margin: initial;
+    }
+
+    .heroImage{
+      background-image: url("/assets/home/desktop/image-hero.jpg");
+      left: 70px;
+    }
+
+    .infoDescription, .infoSubtitle, .infoTitle{
+      text-align: left;
+    }
+
+    .infoLink{
+      justify-content: flex-start;
+    }
+  }
+</style>
