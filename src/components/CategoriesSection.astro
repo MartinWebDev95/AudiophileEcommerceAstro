@@ -1,0 +1,22 @@
+---
+import ListOfCategories from "./ListOfCategories.astro";
+---
+
+<section class="sectionCategories">
+  <ListOfCategories />
+</section>
+
+<style>
+  .sectionCategories{
+    background-color: var(--white);
+    padding-top: 1rem;
+  }
+
+  /* TABLET */
+  @media (min-width: 480px) {
+    .sectionCategories{
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+    }
+  }
+</style>

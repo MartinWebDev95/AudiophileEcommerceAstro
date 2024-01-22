@@ -1,0 +1,157 @@
+---
+import navItems from '../utils/navItems'
+const { type = 'section' } = Astro.props;
+---
+
+<ul class="navigationList" data-type={type}>
+  {navItems.map((item) => (
+    <li class="navigationItem" data-type={type}>
+      <a href={item.navTo}>
+        <img src={item.image} alt={item.navName} loading="lazy" />
+  
+        <span
+          class='itemTitle'
+          data-type={type}
+        >
+          {item.navName}
+        </span>
+  
+        {item.shop && (
+          <span
+            class="itemShop"
+            data-type={type}
+          >
+            Shop
+            <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M1.322 1l5 5-5 5" stroke="#D87D4A" stroke-width="2" fill="none" fill-rule="evenodd" /></svg>
+          </span>
+        )}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .navigationList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 4rem;
+  }
+
+  .navigationList[data-type='navbar']{
+    padding-bottom: 4rem;
+  }
+
+  .navigationItem:first-of-type{
+    display: none;
+  }
+
+  .navigationItem{
+    width: 90%;
+  }
+
+  .navigationItem a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--lightGray);
+    border-radius: 5px;
+  }
+
+  .navigationItem a img{
+    width: 120px;
+    margin-top: -3rem;
+  }
+
+  .itemTitle, .itemShop{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1em;
+  }
+
+  .itemTitle{
+    color: var(--black);
+    font-size: 14px;
+  }
+
+  .itemShop{
+    margin-block: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--gray);
+    font-size: 12px;
+    transition: all .2s ease-in-out;
+  }
+
+  /* TABLET */
+  @media (min-width: 480px) {
+    .navigationList[data-type='navbar']{
+      flex-direction: row;
+      gap: 1rem;
+      padding: 5rem 4rem 4rem 4rem;
+      width: 100%;
+      background-color: var(--white);
+      margin-top: 0;
+      border-radius: 0px 0px 4px 4px;
+    }
+
+    .navigationList{
+      flex-direction: row;
+      gap: 1rem;
+      width: 90%;
+      margin: 3rem auto 0 auto;
+    }
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1000px) {
+    .navigationList[data-type='navbar']{
+      flex-direction: row;
+      gap: 1rem;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+    }
+
+    .navigationList{
+      width: 80%;
+    }
+
+    .navigationItem[data-type='navbar']:first-of-type{
+      display: block;
+    }
+
+    .navigationItem[data-type='navbar'] a{
+      background-color: transparent;
+      color: var(--white);
+    }
+    
+    .navigationItem[data-type='navbar'] a img{
+      display: none;
+    }
+
+    .itemShop[data-type='navbar']{
+      display: none;
+    }
+
+    .itemTitle[data-type='navbar']{
+      color: var(--white);
+    }
+
+    .itemTitle.linkActive[data-type='navbar']{
+      color: var(--orange);
+    }
+
+    .itemTitle[data-type='navbar']:hover{
+      color: var(--orange);
+      transition: all .2s ease-in-out;
+    }
+
+    .navigationItem:hover .itemShop{
+      color: var(--orange);
+    }
+  }
+</style>
