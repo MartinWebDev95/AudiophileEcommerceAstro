@@ -1,0 +1,247 @@
+---
+import Link from "./Link.astro";
+---
+
+<section class="sectionProducts">
+  <div class="containerFirstSpeaker">
+    <div class="speaker">
+      <picture>
+        <source media="(min-width: 1000px)" srcset="/assets/home/desktop/image-speaker-zx9.png" />
+
+        <source media="(min-width: 480px)" srcset="/assets/home/tablet/image-speaker-zx9.png" />
+
+        <img src="/assets/home/mobile/image-speaker-zx9.png" alt="ZX9 Speaker" loading="lazy" />
+      </picture>
+
+      <div class="speakerInfo">
+        <h2>ZX9 Speaker</h2>
+
+        <p>
+          Upgrade to premium speakers that are phenomenally
+          built to deliver truly remarkable sound.
+        </p>
+
+        <div class="speakerLink">
+          <Link href="/speakers/zx9-speaker" type="alternate">
+            See Product
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="containerSecondSpeaker">
+    <div class="secondSpeaker">
+      <picture>
+        <source media="(min-width: 1000px)" srcset="/assets/home/desktop/image-speaker-zx7.jpg" />
+
+        <source media="(min-width: 480px)" srcset="/assets/home/tablet/image-speaker-zx7.jpg" />
+
+        <img src="/assets/home/mobile/image-speaker-zx7.jpg" alt="ZX7 Speaker" loading="lazy" />
+      </picture>
+
+      <div class="secondSpeakerInfo">
+        <h2>ZX7 Speaker</h2>
+
+        <div class="secondSpeakerLink">
+          <Link href="/speakers/zx7-speaker" type="secondary">
+            See Product
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="containerEarphones">
+    <div class="earphonesImage">
+      <picture>
+        <source media="(min-width: 1000px)" srcset="/assets/home/desktop/image-earphones-yx1.jpg" />
+
+        <source media="(min-width: 480px)" srcset="/assets/home/tablet/image-earphones-yx1.jpg" />
+
+        <img src="/assets/home/mobile/image-earphones-yx1.jpg" alt="YX1 Earphones" loading="lazy" />
+      </picture>
+    </div>
+
+    <div class="earphonesInfo">
+      <h2>YX1 Earphones</h2>
+
+      <div class="earphonesLink">
+        <Link href="/earphones/yx1-earphones" type="secondary">
+          See Product
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sectionProducts{
+    background-color: var(--white);
+  }
+
+  .sectionProducts{
+    padding-top: 4rem;
+  }
+
+  .containerFirstSpeaker, .containerSecondSpeaker, .containerEarphones{
+    background-color: var(--orange);
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  .containerSecondSpeaker, .containerEarphones{
+    margin-top: 2rem;
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .containerEarphones{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .speaker{
+    background-image: url("/assets/home/desktop/pattern-circles.svg");
+    background-position: 50% -7rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .speaker picture{
+    width: 160px;
+    margin: 0 auto;
+  }
+
+  .speakerInfo h2, .speakerInfo p{
+    color: var(--white);
+    text-align: center;
+  }
+
+  .speakerInfo h2{
+    text-transform: uppercase;
+    font-size: 2.5em;
+  }
+
+  .speakerLink{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+
+  .secondSpeaker{
+    position: relative;
+  }
+
+  .secondSpeakerInfo{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+  }
+
+  .secondSpeakerInfo h2, .earphonesInfo h2{
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+  }
+
+  .earphonesImage picture img, .earphonesInfo{
+    border-radius: 5px;
+  }
+
+  .earphonesInfo{
+    background-color: var(--lightGray);
+    padding: 2rem;
+  }
+
+  /* TABLET */
+  @media (min-width: 480px) {
+    .sectionProducts{
+      padding-top: 0rem;
+    }
+
+    .speaker{
+      background-position: 50% -15rem;
+      padding-block: 4rem;
+    }
+
+    .speaker picture{
+      width: 200px;
+    }
+
+    .speakerInfo{
+      width: 60%;
+    }
+
+    .secondSpeaker picture img{
+      width: 100%;
+    }
+
+    .containerEarphones{
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  /* TABLET */
+  @media (min-width: 480px) and (max-width: 597px) {
+    .secondSpeakerInfo{
+      top: 15%;
+    }
+
+    .secondSpeakerInfo h2, .earphonesInfo h2{
+      padding-bottom: 1rem;
+    }
+
+    .earphonesInfo{
+      padding: 1rem;
+    }
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1000px) {
+    
+    .containerFirstSpeaker, .containerSecondSpeaker, .containerEarphones{
+      width: 80%;
+    }
+
+    .speaker{
+      flex-direction: row;
+      padding-bottom: 0;
+      padding-inline: 4rem;
+      gap: 4rem;
+      background-position: -15rem;
+    }
+
+    .speaker picture{
+      width: 500px;
+    }
+
+    .speakerInfo{
+      width: 60%;
+    }
+
+    .speakerInfo h2, .speakerInfo p{
+      color: var(--white);
+      text-align: left;
+    }
+
+    .speakerLink{
+      justify-content: flex-start;
+    }
+
+    .containerEarphones{
+      gap: 2rem;
+    }
+
+    .secondSpeakerInfo h2, .earphonesInfo h2{
+      font-size: 2em;
+    }
+  }
+</style>
