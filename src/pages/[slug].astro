@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../lib/products.json';
+
+export async function getStaticPaths() {
+  const pages = [
+    {
+      slug: "headphones",
+      title: "Audiophile E-commerce | Headphones",
+    },
+    {
+      slug: "speakers",
+      title: "Audiophile E-commerce | Speakers",
+    },
+    {
+      slug: "earphones",
+      title: "Audiophile E-commerce | Earphones",
+    },
+  ];
+
+  return pages.map(({ slug, title }) => {
+    return {
+      params: { slug },
+      props: { title },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { title } = Astro.props;
+
+const products = data.products.filter((product) => product.category === slug);
+---
+
+<Layout title={title}>
+  <h1 class="title">{slug.toUpperCase()}</h1>
+</Layout>
+
+<style>
+  .title{
+    border-top: 1px solid var(--darkGray);
+    text-align: center;
+    color: var(--white);
+    text-transform: uppercase;
+    margin: 0;
+    padding-block: 2rem;
+    background-color: var(--lightBlack);
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1000px) {
+    .title{
+      padding-block: 3rem;
+      font-size: 2.4em;
+    }
+  }
+</style>
