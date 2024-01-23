@@ -1,0 +1,31 @@
+---
+import data from '../lib/products.json';
+import Product from './Product.astro';
+
+const { slug } = Astro.props;
+
+//Get the products of a specific category, showing the new product
+const products = data.products
+                        .filter((product) => product.category === slug)
+                        .sort((a, b) => b.new - a.new);
+---
+
+<section class="sectionListProducts">
+  {products.map((product) => (
+    <Product category={slug} product={product} />
+  ))}
+</section>
+
+<style>
+  .sectionListProducts{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1000px){
+    .sectionListProducts{
+      width: 80%;
+    }  
+  }
+</style>

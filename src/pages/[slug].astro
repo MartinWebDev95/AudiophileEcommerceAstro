@@ -1,6 +1,6 @@
 ---
+import ListOfProducts from '../components/ListOfProducts.astro';
 import Layout from '../layouts/Layout.astro';
-import data from '../lib/products.json';
 
 export async function getStaticPaths() {
   const pages = [
@@ -28,12 +28,12 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const { title } = Astro.props;
-
-const products = data.products.filter((product) => product.category === slug);
 ---
 
 <Layout title={title}>
   <h1 class="title">{slug.toUpperCase()}</h1>
+
+  <ListOfProducts slug={slug} />
 </Layout>
 
 <style>
