@@ -1,0 +1,105 @@
+<section class="sectionInfo">
+  <div class="containerSectionInfo">
+    <picture>
+      <source media="(min-width: 1000px)" srcset="/assets/shared/desktop/image-best-gear.jpg" />
+
+      <source media="(min-width: 480px)" srcset="/assets/shared/tablet/image-best-gear.jpg" />
+      
+      <img src="/assets/shared/mobile/image-best-gear.jpg" alt="Best Gear" loading="lazy" />
+    </picture>
+
+    <div class="info">
+      <h3>
+        Bringing you the
+        {' '}
+        <span>best</span>
+        {' '}
+        audio gear
+      </h3>
+
+      <p>
+        Located at the heart of New York City, Audiophile is the premier
+        store for high end headphones, earphones, speakers, and audio accessories.
+        We have a large showroom and luxury demonstration rooms available for
+        you to browse and experience a wide range of our products. Stop by our
+        store to meet some of the fantastic people who make Audiophile the best
+        place to buy your portable audio equipment.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sectionInfo{
+    background-color: var(--white);
+    padding-block: 4rem;
+  }
+
+  .containerSectionInfo{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .containerSectionInfo picture img{
+    border-radius: 5px;
+  }
+
+  .containerSectionInfo .info h3{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;    
+  }
+
+  .containerSectionInfo .info h3 span{
+    color: var(--orange);
+  }
+
+  .containerSectionInfo .info p{
+    color: var(--gray);
+    text-align: center;
+  }
+
+  /* TABLET */
+  @media (min-width: 480px) {
+    .containerSectionInfo .info{
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1000px) {
+    .sectionInfo{
+      padding-block: 6rem;
+    }
+
+    .containerSectionInfo{
+      width: 80%;
+      grid-template-rows: repeat(1, auto);
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+    }
+
+    .containerSectionInfo picture{
+      grid-column: 2/3;
+    }
+
+    .containerSectionInfo .info{
+      width: 100%;
+      margin: auto;
+      grid-row: 1/2;
+      grid-column: 1/2;    
+    }
+
+    .containerSectionInfo .info h3, .containerSectionInfo .info p{
+      text-align: left;
+    }
+
+    .containerSectionInfo .info h3{
+      font-size: 2.5em;
+    }
+  }
+</style>
