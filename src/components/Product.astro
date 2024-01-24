@@ -78,6 +78,8 @@ const { detail = false, product } = Astro.props;
 
   .containerProductDetail{
     padding-top: 0;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .containerProduct:last-of-type{
@@ -138,15 +140,6 @@ const { detail = false, product } = Astro.props;
     padding-top: 1rem;
   }
 
-  .productLink a{
-    background-color: var(--orange);
-    color: var(--white);
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 12px;
-    padding: 1rem 2rem;
-  }
-
   .productDetailCart{
     display: flex;
     align-items: center;
@@ -161,6 +154,7 @@ const { detail = false, product } = Astro.props;
     padding: .8rem 1.5rem;
     font-weight: bold;
     cursor: pointer;
+    transition: all .2s ease-in-out;
   }
 
   .productDetailCart .buttonAddToCart:disabled{
@@ -186,6 +180,10 @@ const { detail = false, product } = Astro.props;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 4rem;
+    }
+
+    .containerProductDetail{
+      width: 80%;
     }
 
     .containerProduct:nth-child(even) picture{
@@ -215,9 +213,8 @@ const { detail = false, product } = Astro.props;
       padding-top: 2rem;
     }
 
-    .productLink a:hover, .productDetailCart .buttonAddToCart:hover{
+    .productDetailCart .buttonAddToCart:hover{
       background-color: var(--lightOrange);
-      transition: all .2s ease-in-out;
     }
 
     .productDetailCart .buttonAddToCart:disabled{
