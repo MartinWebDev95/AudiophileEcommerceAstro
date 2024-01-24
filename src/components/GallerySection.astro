@@ -1,0 +1,75 @@
+---
+const { gallery } = Astro.props;
+---
+
+<section class="sectionGallery">
+  <div class="sectionGalleryContainer">
+    <picture class="galleryFirst">
+      <source media="(min-width: 1000px)" srcset={gallery?.first?.desktop} />
+      <source media="(min-width: 480px)" srcset={gallery?.first?.tablet} />
+      <img srcset={gallery?.first?.mobile} alt="Gallery first" loading="lazy" />
+    </picture>
+  
+    <picture class="gallerySecon">
+      <source media="(min-width: 1000px)" srcset={gallery?.second?.desktop} />
+      <source media="(min-width: 480px)" srcset={gallery?.second?.tablet} />
+      <img srcset={gallery?.second?.mobile} alt="Gallery second" loading="lazy" />
+    </picture>
+  
+    <picture class="galleryThird">
+      <source media="(min-width: 1000px)" srcset={gallery?.third?.desktop} />
+      <source media="(min-width: 480px)" srcset={gallery?.third?.tablet} />
+      <img srcset={gallery?.third?.mobile} alt="Gallery third" loading="lazy" />
+    </picture>
+  </div>
+</section>
+
+<style>
+  .sectionGallery{
+    background-color: var(--white);
+  }
+
+  .sectionGalleryContainer{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .galleryFirst img, .gallerySecond img, .galleryThird img{
+    border-radius: 5px;
+    height: 100%;
+  }
+
+  @media (min-width: 480px){
+    .sectionGalleryContainer{
+      display: grid;
+      grid-template-columns: 40% 1fr;
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .galleryFirst{
+      grid-row: 1/2;
+      grid-column: 1/2;
+      object-fit: cover;
+    }
+    
+    .gallerySecond{
+      grid-row: 2/3;
+      grid-column: 1/2;
+    } 
+    
+    .galleryThird{
+      grid-row: 1/3;
+      grid-column: 2/3;
+    }    
+  }
+
+  @media (min-width: 1000px){
+    .sectionGalleryContainer{
+      width: 80%;
+    }
+  }
+</style>
