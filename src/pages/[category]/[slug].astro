@@ -1,0 +1,23 @@
+---
+import data from '../../lib/products.json';
+import Layout from '../../layouts/Layout.astro';
+import CategoriesSection from '../../components/CategoriesSection.astro'
+
+export function getStaticPaths() {
+  return data.products.map((product) => (
+    { 
+      params: { category: `${product.category}`, slug: `${product.slug}` },
+      props: { title: `Audiophile E-commerce | ${product.name}` },
+    }
+  ));
+}
+
+const { category, slug } = Astro.params;
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <h1>{slug}</h1>
+
+  <CategoriesSection />
+</Layout>
