@@ -1,0 +1,108 @@
+---
+import Link from "./Link.astro";
+
+const { suggestedProducts } = Astro.props;
+---
+
+<section class="sectionSuggestedProducts">
+  <div class="sectionSuggestedProductsContainer">
+    <h3 class="sectionTitle">You may also like</h3>
+  
+    <div class="containerProducts">
+      {suggestedProducts.map((suggestedProduct) => (
+        <div class="product">
+          <picture>
+            <source media="(min-width: 1000px)" srcset={suggestedProduct.image.desktop} />
+  
+            <source media="(min-width: 760px)" srcset={suggestedProduct.image.tablet} />
+  
+            <img src={suggestedProduct.image.mobile} alt={suggestedProduct.name} loading="lazy" />
+          </picture>
+  
+          <div class="productInfo">
+            <h4>{suggestedProduct.name}</h4>
+  
+            <div class="containerProductLink">
+              <Link href={`/${suggestedProduct.slug}`} type="primary">
+                See Product
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .sectionSuggestedProducts{
+    background-color: var(--white);
+  }
+
+  .sectionSuggestedProductsContainer{
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+  }
+
+  .sectionTitle{
+    text-transform: uppercase;
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 4rem;
+  }
+
+  .containerProducts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .product picture img{
+    border-radius: 5px;
+  }
+
+  .productInfo h4{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding-block: 2rem;
+    font-size: 1.5em;
+    max-width: 12ch;
+    letter-spacing: .1em;
+  }
+
+  .containerProductLink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 480px){
+    .sectionSuggestedProductsContainer{
+      padding-bottom: 4rem;
+    }
+  }
+
+  @media (min-width: 760px){
+    .containerProducts{
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+  @media (min-width: 1000px){
+    .sectionSuggestedProductsContainer{
+      width: 80%;
+    }
+
+    .containerProducts{
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+  }
+</style>
