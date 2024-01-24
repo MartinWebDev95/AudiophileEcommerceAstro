@@ -1,36 +1,71 @@
 ---
 import Link from "./Link.astro";
 
-const { category, product } = Astro.props;
+const { detail = false, product } = Astro.props;
 ---
 
-<div class="containerProduct">
-  <picture>
-    <source media="(min-width: 1000px)" srcset={product.categoryImage.desktop} />
+{!detail ? (
+  <div class="containerProduct">
+    <picture>
+      <source media="(min-width: 1000px)" srcset={product.categoryImage.desktop} />
+      <source media="(min-width: 480px)" srcset={product.categoryImage.tablet} />
+      <img srcset={product.categoryImage.mobile} alt={product.shortName} />
+    </picture>
 
-    <source media="(min-width: 480px)" srcset={product.categoryImage.tablet} />
+    <div>
+      {product.new && (<p class="newProduct">New Product</p>)}
 
-    <img srcset={product.categoryImage.mobile} alt={product.shortName} />
-  </picture>
+      <h2>
+        {product.name}
+      </h2>
 
-  <div>
-    {product.new && (<p class="newProduct">New Product</p>)}
+      <p class="productDescription">
+        {product.description}
+      </p>
 
-    <h2>
-      {product.name}
-    </h2>
-
-    <p class="productDescription">
-      {product.description}
-    </p>
-
-    <div class="productLink">
-      <Link href={`/${category}/${product.slug}`} type="primary">
-        See Product
-      </Link>
+      <div class="productLink">
+        <Link href={`${product.category}/${product.slug}`} type="primary">
+          See Product
+        </Link>
+      </div>
     </div>
   </div>
-</div>
+) : (
+  <div class="containerProductDetail">
+    <picture>
+      <source media="(min-width: 1000px)" srcset={product.image.desktop} />
+      <source media="(min-width: 480px)" srcset={product.image.tablet} />
+      <img srcset={product.image.mobile} alt={product.shortName} />
+    </picture>
+
+    <div>
+      {product.new && (<p class="newProductDetail">New Product</p>)}
+
+      <h2>
+        {product.name}
+      </h2>
+
+      <p class="productDetailDescription">
+        {product.description}
+      </p>
+
+      <p class="productDetailPrice">
+        {`$ ${product.price.toLocaleString('en-US')}`}
+      </p>
+
+      <div class="productDetailCart">
+        
+
+        <button
+          type="button"
+          class="buttonAddToCart"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
 <style>
   .containerProduct, .containerProductDetail{
