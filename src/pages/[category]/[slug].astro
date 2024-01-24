@@ -2,6 +2,7 @@
 import data from '../../lib/products.json';
 import Layout from '../../layouts/Layout.astro';
 import CategoriesSection from '../../components/CategoriesSection.astro'
+import Product from '../../components/Product.astro'
 
 export function getStaticPaths() {
   return data.products.map((product) => (
@@ -12,12 +13,22 @@ export function getStaticPaths() {
   ));
 }
 
-const { category, slug } = Astro.params;
+const { slug } = Astro.params;
 const { title } = Astro.props;
+
+//Get the specific product
+const product = data.products.find((product) => product.slug === slug);
 ---
 
 <Layout title={title}>
-  <h1>{slug}</h1>
-
+  <section class="sectionProductDetail">
+    <Product product={product} detail />
+  </section>
   <CategoriesSection />
 </Layout>
+
+<style>
+  .sectionProductDetail{
+    background-color: var(--white);
+  }
+</style>
