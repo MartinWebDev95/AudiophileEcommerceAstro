@@ -1,5 +1,6 @@
 ---
 import Link from "./Link.astro";
+import QuantityInput from "./QuantityInput";
 
 const { detail = false, product } = Astro.props;
 ---
@@ -54,7 +55,7 @@ const { detail = false, product } = Astro.props;
       </p>
 
       <div class="productDetailCart">
-        
+        <QuantityInput client:load/>
 
         <button
           type="button"
