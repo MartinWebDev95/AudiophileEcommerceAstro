@@ -5,7 +5,7 @@ import Link from "./Link.astro";
 <section class="sectionProducts">
   <div class="containerFirstSpeaker">
     <div class="speaker">
-      <picture>
+      <picture transition:name={`product 6 image`}>
         <source media="(min-width: 1000px)" srcset="/assets/home/desktop/image-speaker-zx9.png" />
 
         <source media="(min-width: 480px)" srcset="/assets/home/tablet/image-speaker-zx9.png" />
@@ -14,7 +14,7 @@ import Link from "./Link.astro";
       </picture>
 
       <div class="speakerInfo">
-        <h2>ZX9 Speaker</h2>
+        <h2 transition:name={`product 6 name`}>ZX9 Speaker</h2>
 
         <p>
           Upgrade to premium speakers that are phenomenally
@@ -32,7 +32,7 @@ import Link from "./Link.astro";
 
   <div class="containerSecondSpeaker">
     <div class="secondSpeaker">
-      <picture>
+      <picture transition:name={`product 5 image`}>
         <source media="(min-width: 1000px)" srcset="/assets/home/desktop/image-speaker-zx7.jpg" />
 
         <source media="(min-width: 480px)" srcset="/assets/home/tablet/image-speaker-zx7.jpg" />
@@ -41,7 +41,7 @@ import Link from "./Link.astro";
       </picture>
 
       <div class="secondSpeakerInfo">
-        <h2>ZX7 Speaker</h2>
+        <h2 transition:name={`product 5 name`}>ZX7 Speaker</h2>
 
         <div class="secondSpeakerLink">
           <Link href="/speakers/zx7-speaker" type="secondary">
@@ -54,7 +54,7 @@ import Link from "./Link.astro";
 
   <div class="containerEarphones">
     <div class="earphonesImage">
-      <picture>
+      <picture transition:name={`product 1 image`}>
         <source media="(min-width: 1000px)" srcset="/assets/home/desktop/image-earphones-yx1.jpg" />
 
         <source media="(min-width: 480px)" srcset="/assets/home/tablet/image-earphones-yx1.jpg" />
@@ -64,7 +64,7 @@ import Link from "./Link.astro";
     </div>
 
     <div class="earphonesInfo">
-      <h2>YX1 Earphones</h2>
+      <h2 transition:name={`product 1 name`}>YX1 Earphones</h2>
 
       <div class="earphonesLink">
         <Link href="/earphones/yx1-earphones" type="secondary">

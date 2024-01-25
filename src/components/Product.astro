@@ -7,20 +7,22 @@ const { detail = false, product } = Astro.props;
 
 {!detail ? (
   <div class="containerProduct">
-    <picture>
+    <picture transition:name={`product ${product.id} image`}>
       <source media="(min-width: 1000px)" srcset={product.categoryImage.desktop} />
+
       <source media="(min-width: 480px)" srcset={product.categoryImage.tablet} />
+
       <img srcset={product.categoryImage.mobile} alt={product.shortName} />
     </picture>
 
     <div>
-      {product.new && (<p class="newProduct">New Product</p>)}
+      {product.new && (<p class="newProduct" transition:name={`product ${product.id} new`}>New Product</p>)}
 
-      <h2>
+      <h2 transition:name={`product ${product.id} name`}>
         {product.name}
       </h2>
 
-      <p class="productDescription">
+      <p class="productDescription" transition:name={`product ${product.id} description`}>
         {product.description}
       </p>
 
@@ -33,20 +35,22 @@ const { detail = false, product } = Astro.props;
   </div>
 ) : (
   <div class="containerProductDetail">
-    <picture>
+    <picture transition:name={`product ${product.id} image`}>
       <source media="(min-width: 1000px)" srcset={product.image.desktop} />
+
       <source media="(min-width: 480px)" srcset={product.image.tablet} />
+      
       <img srcset={product.image.mobile} alt={product.shortName} />
     </picture>
 
     <div>
-      {product.new && (<p class="newProductDetail">New Product</p>)}
+      {product.new && (<p class="newProductDetail" transition:name={`product ${product.id} new`}>New Product</p>)}
 
-      <h2>
+      <h2 transition:name={`product ${product.id} name`}>
         {product.name}
       </h2>
 
-      <p class="productDetailDescription">
+      <p class="productDetailDescription" transition:name={`product ${product.id} description`}>
         {product.description}
       </p>
 

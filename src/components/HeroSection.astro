@@ -5,11 +5,11 @@ import Link from "./Link.astro";
 <section class="heroSection">
   <div class="heroContainer">
     <div class="heroInfo">
-      <p class="infoSubtitle">
+      <p class="infoSubtitle" transition:name={`product 4 new`}>
         New Product
       </p>
 
-      <h1 class="infoTitle">XX99 Mark II Headphones</h1>
+      <h1 class="infoTitle" transition:name={`product 4 name`}>XX99 Mark II Headphones</h1>
       
       <p class="infoDescription">
         Experience natural, lifelike audio and exceptional
@@ -22,7 +22,7 @@ import Link from "./Link.astro";
         </Link>
       </div>
     </div>
-    <div class="heroImage" />
+    <div class="heroImage" transition:name={`product 4 image`} />
   </div>
 </section>
 

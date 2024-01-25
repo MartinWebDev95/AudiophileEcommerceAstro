@@ -9,21 +9,21 @@ const { suggestedProducts } = Astro.props;
     <h3 class="sectionTitle">You may also like</h3>
   
     <div class="containerProducts">
-      {suggestedProducts.map((suggestedProduct) => (
+      {suggestedProducts.map((product) => (
         <div class="product">
           <picture>
-            <source media="(min-width: 1000px)" srcset={suggestedProduct.image.desktop} />
+            <source media="(min-width: 1000px)" srcset={product.image.desktop} />
   
-            <source media="(min-width: 760px)" srcset={suggestedProduct.image.tablet} />
+            <source media="(min-width: 760px)" srcset={product.image.tablet} />
   
-            <img src={suggestedProduct.image.mobile} alt={suggestedProduct.name} loading="lazy" />
+            <img src={product.image.mobile} alt={product.name} loading="lazy" />
           </picture>
   
           <div class="productInfo">
-            <h4>{suggestedProduct.name}</h4>
+            <h4>{product.name}</h4>
   
             <div class="containerProductLink">
-              <Link href={`/${suggestedProduct.slug}`} type="primary">
+              <Link href={`/${product.slug}`} type="primary">
                 See Product
               </Link>
             </div>
