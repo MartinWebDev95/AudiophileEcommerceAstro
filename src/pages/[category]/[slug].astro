@@ -5,6 +5,7 @@ import CategoriesSection from '../../components/CategoriesSection.astro'
 import FeaturesSection from '../../components/FeaturesSection.astro'
 import ListOfSuggestedProducts from '../../components/ListOfSuggestedProducts.astro'
 import GallerySection from '../../components/GallerySection.astro'
+import GoBackButton from '../../components/GoBackButton'
 import Product from '../../components/Product.astro'
 
 export function getStaticPaths() {
@@ -25,11 +26,17 @@ const product = data.products.find((product) => product.slug === slug);
 
 <Layout title={title}>
   <section class="sectionProductDetail">
+    <GoBackButton client:load />
+
     <Product product={product} detail />
   </section>
+
   <FeaturesSection features={product?.features} includedItems={product?.includedItems}/>
+
   <GallerySection gallery={product?.gallery}/>
+
   <ListOfSuggestedProducts suggestedProducts={product?.others} />
+
   <CategoriesSection />
 </Layout>
 

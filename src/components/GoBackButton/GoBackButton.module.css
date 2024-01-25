@@ -1,0 +1,33 @@
+.containerGoBackBtn{
+  width: 90%;
+  margin: 0 auto;
+  padding-block: 2rem;
+}
+
+.goBackBtn{
+  color: var(--gray);
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+}
+
+/* TABLET */
+@media (min-width: 480px) {
+  .containerGoBackBtn{
+    padding-block: 3rem;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1000px){
+  .containerGoBackBtn{
+    width: 80%;
+    padding-block: 2rem;
+  }
+
+  .goBackBtn:hover{
+    text-decoration: underline;
+  }
+}
