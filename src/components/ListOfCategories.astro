@@ -1,6 +1,9 @@
 ---
 import navItems from '../utils/navItems'
-const { type = 'section' } = Astro.props;
+
+const { type = '' } = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 
 <ul class="navigationList" data-type={type}>
@@ -10,7 +13,7 @@ const { type = 'section' } = Astro.props;
         <img src={item.image} alt={item.navName} loading="lazy" />
   
         <span
-          class='itemTitle'
+          class={`itemTitle ${currentPath === item.navTo ? 'linkActive' : ''}`}
           data-type={type}
         >
           {item.navName}
@@ -73,6 +76,7 @@ const { type = 'section' } = Astro.props;
   .itemTitle{
     color: var(--black);
     font-size: 14px;
+    transition: all .2s ease-in-out;
   }
 
   .itemShop{
@@ -147,7 +151,6 @@ const { type = 'section' } = Astro.props;
 
     .itemTitle[data-type='navbar']:hover{
       color: var(--orange);
-      transition: all .2s ease-in-out;
     }
 
     .navigationItem:hover .itemShop{
