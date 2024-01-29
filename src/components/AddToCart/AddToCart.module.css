@@ -1,0 +1,26 @@
+.buttonAddToCart{
+  background-color: var(--orange);
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  padding: .8rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.buttonAddToCart:disabled{
+  background-color: var(--lightOrange);
+}
+
+/* DESKTOP */
+@media (min-width: 1000px){
+  .buttonAddToCart:hover{
+    background-color: var(--lightOrange);
+  }
+
+  .buttonAddToCart:disabled{
+    background-color: var(--lightOrange);
+    cursor: not-allowed;
+  }
+}

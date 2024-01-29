@@ -1,6 +1,6 @@
 ---
 import Link from "./Link.astro";
-import QuantityInput from "./QuantityInput";
+import AddToCart from "./AddToCart";
 
 const { detail = false, product } = Astro.props;
 ---
@@ -59,14 +59,7 @@ const { detail = false, product } = Astro.props;
       </p>
 
       <div class="productDetailCart">
-        <QuantityInput client:load/>
-
-        <button
-          type="button"
-          class="buttonAddToCart"
-        >
-          Add to cart
-        </button>
+        <AddToCart client:load />
       </div>
     </div>
   </div>
@@ -151,21 +144,6 @@ const { detail = false, product } = Astro.props;
     gap: 1rem;
   }
 
-  .productDetailCart .buttonAddToCart{
-    background-color: var(--orange);
-    border: none;
-    color: var(--white);
-    text-transform: uppercase;
-    padding: .8rem 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-  }
-
-  .productDetailCart .buttonAddToCart:disabled{
-    background-color: var(--lightOrange);
-  }
-
   /* TABLET */
   @media (min-width: 480px){
     .containerProduct:last-of-type{
@@ -216,15 +194,6 @@ const { detail = false, product } = Astro.props;
     .productLink{
       justify-content: flex-start;
       padding-top: 2rem;
-    }
-
-    .productDetailCart .buttonAddToCart:hover{
-      background-color: var(--lightOrange);
-    }
-
-    .productDetailCart .buttonAddToCart:disabled{
-      background-color: var(--lightOrange);
-      cursor: not-allowed;
     }
   }
 </style>

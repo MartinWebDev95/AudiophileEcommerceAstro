@@ -1,9 +1,6 @@
 import styles from './QuantityInput.module.css';
-import useQuantityInput from '../../hooks/useQuantityInput'
 
-const QuantityInput = () => {
-  const { quantity, handleIncrement, handleDecrement } = useQuantityInput();
-
+const QuantityInput = ({ quantity, handleIncrement, handleDecrement }) => {
   return (
     <div className={styles.containerQuantityInput}>
       <button type="button" onClick={handleDecrement}>
