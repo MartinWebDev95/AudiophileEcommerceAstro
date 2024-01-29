@@ -4,11 +4,14 @@ import ListOfCategories from "./ListOfCategories.astro";
 
 <header class="header">
   <div class="headerContainer">
-    <a href="#header-menu" class="menuMobile">
+    <button
+      type="button"
+      class="menuMobile"
+    >
       <span />
       <span />
       <span />
-    </a>
+    </button>
 
     <a href="/" class="logo">
       <svg width="143" height="25" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +19,7 @@ import ListOfCategories from "./ListOfCategories.astro";
       </svg>
     </a>
 
-    <nav id="header-menu" class="navigation">
+    <nav class="navigation" aria-hidden="true">
       <ListOfCategories type="navbar" />
     </nav>
 
@@ -31,6 +34,38 @@ import ListOfCategories from "./ListOfCategories.astro";
     </button>
   </div>
 </header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const btnMobile = document.querySelector('.menuMobile');
+    const navigation = document.querySelector('.navigation');
+  
+    btnMobile.addEventListener('click', () => {
+      btnMobile.classList.toggle("active");
+  
+      if(navigation.ariaHidden === 'true'){
+        navigation.ariaHidden = 'false';
+        document.body.style.overflow = 'hidden';
+      }else{
+        navigation.ariaHidden = 'true';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    const desktopMediaQuery = window.matchMedia('(min-width: 1000px)');
+
+    // Update the body overflow property when the window size is greater or less than 1000px
+    desktopMediaQuery.addEventListener('change', (evt) => {
+      if (evt.matches && (navigation.ariaHidden === 'false')) {
+        document.body.style.overflow = 'auto';
+      }
+
+      if (!evt.matches && (navigation.ariaHidden === 'false')) {
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+</script>
 
 <style>
   .header{
@@ -120,7 +155,7 @@ import ListOfCategories from "./ListOfCategories.astro";
     transform: scaleY(1);
     overflow-y: scroll;
   }
-
+  
   .cart{
     background-color: transparent;
     border: none;
@@ -208,13 +243,7 @@ import ListOfCategories from "./ListOfCategories.astro";
       margin-bottom: 0;
     }
 
-    /* .navigation[aria-hidden="false"], .navigation[aria-hidden="true"], .navigation[aria-hidden="true"]::after, .navigation[aria-hidden="false"]::after{
-      height: auto;
-      transform: scaleY(1);
-      opacity: 1;
-    } */
-
-    .navigation, .navigation::after{
+    .navigation[aria-hidden="false"], .navigation[aria-hidden="true"], .navigation[aria-hidden="true"]::after, .navigation[aria-hidden="false"]::after{
       height: auto;
       transform: scaleY(1);
       opacity: 1;
