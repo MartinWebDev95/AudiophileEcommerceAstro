@@ -1,0 +1,37 @@
+.cart{
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.cart .cartProductsNumber{
+  background-color: var(--orange);
+  color: var(--white);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: -8px;
+  right: -3px;
+}
+
+.cart .cartProductsNumber[aria-hidden="true"]{
+  display: none;
+}
+
+.cart .cartProductsNumber[aria-hidden="false"]{
+  display: grid;
+  place-content: center;
+}
+
+.cart:hover{
+  cursor: pointer;
+}
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+  .cart:hover svg path{
+    fill: var(--orange);
+    transition: all .2s ease-in-out;
+  }
+}
