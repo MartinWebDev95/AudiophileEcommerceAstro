@@ -1,7 +1,6 @@
 ---
 import data from '../../lib/products.json';
 import Layout from '../../layouts/Layout.astro';
-import CategoriesSection from '../../components/CategoriesSection.astro'
 import FeaturesSection from '../../components/FeaturesSection.astro'
 import ListOfSuggestedProducts from '../../components/ListOfSuggestedProducts.astro'
 import GallerySection from '../../components/GallerySection.astro'
@@ -36,8 +35,6 @@ const product = data.products.find((product) => product.slug === slug);
   <GallerySection gallery={product?.gallery}/>
 
   <ListOfSuggestedProducts suggestedProducts={product?.others} />
-
-  <CategoriesSection />
 </Layout>
 
 <style>
