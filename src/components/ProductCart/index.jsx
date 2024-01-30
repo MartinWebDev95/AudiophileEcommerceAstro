@@ -5,7 +5,7 @@ import styles from './ProductCart.module.css';
 
 function ProductCart({ item, summary = false }) {
   const { cart, setRemoveCartProduct } = useCartStore(state => state);
-  const { quantity, handleIncrement, handleDecrement } = useQuantityInput(item.quantity);
+  const { quantity, handleIncrement, handleDecrement } = useQuantityInput(item.quantity, item);
 
   const handleDeleteItemFromCart = () => {
     setRemoveCartProduct({
