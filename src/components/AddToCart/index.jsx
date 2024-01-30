@@ -41,8 +41,11 @@ const AddToCart = ({ product }) => {
         type="button"
         className={styles.buttonAddToCart}
         onClick={handleAddProductToCart}
+        disabled={cart.products.some((cartItem) => cartItem.id === product.id)}
       >
-        Add to cart
+        {cart.products.some((cartItem) => cartItem.id === product.id)
+          ? ('In the cart')
+          : ('Add to cart')}
       </button>
     </>
   )
