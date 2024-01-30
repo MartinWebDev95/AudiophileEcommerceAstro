@@ -1,9 +1,20 @@
+import { useCartStore } from '../../store/cartStore';
 import useQuantityInput from '../../hooks/useQuantityInput';
 import QuantityInput from '../QuantityInput';
 import styles from './ProductCart.module.css';
 
 function ProductCart({ item, summary = false }) {
+  const { cart, setRemoveCartProduct } = useCartStore(state => state);
   const { quantity, handleIncrement, handleDecrement } = useQuantityInput(item.quantity);
+
+  const handleDeleteItemFromCart = () => {
+    setRemoveCartProduct({
+      cart: {
+        products: cart.products?.filter((prod) => prod.id !== item.id),
+        totalPriceCart: cart.totalPriceCart - (item.price * quantity),
+      }
+    });
+  }
 
   return (
     <li className={styles.cartItem}>
@@ -12,6 +23,7 @@ function ProductCart({ item, summary = false }) {
           <button
             type="button"
             className={styles.containerCartImage}
+            onClick={handleDeleteItemFromCart}
           >
             <img src={item?.cartImage} alt={item?.shortName} />
             <div className={styles.deleteCartImage}>
