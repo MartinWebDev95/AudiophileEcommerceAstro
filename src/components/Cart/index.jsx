@@ -1,5 +1,5 @@
 import { useCartStore } from '../../store/cartStore';
-import Link from '../Link.astro';
+import ProductCart from '../ProductCart';
 import styles from './Cart.module.css';
 
 function Cart({ isCartHidden, setIsCartHidden }) {
@@ -45,7 +45,10 @@ function Cart({ isCartHidden, setIsCartHidden }) {
               <section className={styles.containerCartList}>
                 <ul className={styles.listCartItem}>
                   {cart.products?.map((item) => (
-                    <h1>{item.shortName}</h1>
+                    <ProductCart
+                      key={item.id}
+                      item={item}
+                    />
                   ))}
                 </ul>
               </section>
