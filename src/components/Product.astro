@@ -59,7 +59,7 @@ const { detail = false, product } = Astro.props;
       </p>
 
       <div class="productDetailCart">
-        <AddToCart client:load />
+        <AddToCart product={product} client:load />
       </div>
     </div>
   </div>
