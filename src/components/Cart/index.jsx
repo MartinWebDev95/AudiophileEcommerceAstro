@@ -3,7 +3,7 @@ import ProductCart from '../ProductCart';
 import styles from './Cart.module.css';
 
 function Cart({ isCartHidden, setIsCartHidden }) {
-  const { cart } = useCartStore(state => state);
+  const { cart, setRemoveAllCartProducts } = useCartStore(state => state);
 
   const handleCloseCart = (e) => {
     if (!e.target.getAttribute('aria-hidden')) return;
@@ -29,14 +29,13 @@ function Cart({ isCartHidden, setIsCartHidden }) {
             <>
               <section className={styles.cartHeader}>
                 <p className={styles.quantityCart}>
-                  Cart (
-                  {`${cart.products?.length}`}
-                  )
+                  Cart ({`${cart.products?.length}`})
                 </p>
 
                 <button
                   type="button"
                   className={styles.cartRemoveAll}
+                  onClick={setRemoveAllCartProducts}
                 >
                   Remove all
                 </button>
