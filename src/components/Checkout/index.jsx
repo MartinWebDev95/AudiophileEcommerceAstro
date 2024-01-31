@@ -1,6 +1,14 @@
 import styles from './Checkout.module.css'
 
-const Checkout = () => {
+const Checkout = ({
+  formData,
+  formErrors,
+  paymentMethod,
+  handleChangeInput,
+  handleFocusInput,
+  handleBlurInput
+}) => {
+
   return (
     <div className={styles.containerCheckout}>
       <h1 className={styles.title}>Checkout</h1>
@@ -11,6 +19,11 @@ const Checkout = () => {
         <div className={styles.containerInput}>
           <label htmlFor="name">
             Name
+
+            {(formErrors.name !== '')
+              && (
+              <span>{formErrors.name}</span>
+              )}
           </label>
 
           <input
@@ -18,13 +31,21 @@ const Checkout = () => {
             name="name"
             id="name"
             placeholder="Alexei Ward"
-            value=""
+            value={formData.name}
+            onChange={handleChangeInput}
+            onFocus={handleFocusInput}
+            onBlur={handleBlurInput}
           />
         </div>
 
         <div className={styles.containerInput}>
           <label htmlFor="email">
             Email Address
+
+            {(formErrors.email !== '')
+              && (
+              <span>{formErrors.email}</span>
+              )}
           </label>
 
           <input
@@ -32,13 +53,21 @@ const Checkout = () => {
             name="email"
             id="email"
             placeholder="alexei@mail.com"
-            value=""
+            value={formData.email}
+            onChange={handleChangeInput}
+            onFocus={handleFocusInput}
+            onBlur={handleBlurInput}
           />
         </div>
 
         <div className={styles.containerInput}>
           <label htmlFor="phone">
             Phone Number
+
+            {(formErrors.phone !== '')
+              && (
+              <span>{formErrors.phone}</span>
+              )}
           </label>
 
           <input
@@ -46,7 +75,10 @@ const Checkout = () => {
             name="phone"
             id="phone"
             placeholder="+1 202-555-0136"
-            value=""
+            value={formData.phone}
+            onChange={handleChangeInput}
+            onFocus={handleFocusInput}
+            onBlur={handleBlurInput}
           />
         </div>
       </fieldset>
@@ -57,6 +89,11 @@ const Checkout = () => {
         <div className={`${styles.containerInput} ${styles.address}`}>
           <label htmlFor="address">
             Address
+
+            {(formErrors.address !== '')
+              && (
+              <span>{formErrors.address}</span>
+              )}
           </label>
 
           <input
@@ -64,13 +101,21 @@ const Checkout = () => {
             name="address"
             id="address"
             placeholder="1137 Williams Avenue"
-            value=""
+            value={formData.address}
+            onChange={handleChangeInput}
+            onFocus={handleFocusInput}
+            onBlur={handleBlurInput}
           />
         </div>
 
         <div className={styles.containerInput}>
           <label htmlFor="zipCode">
             ZIP Code
+
+            {(formErrors.zipCode !== '')
+              && (
+                <span>{formErrors.zipCode}</span>
+              )}
           </label>
 
           <input
@@ -78,13 +123,21 @@ const Checkout = () => {
             name="zipCode"
             id="zipCode"
             placeholder="10001"
-            value=""
+            value={formData.zipCode}
+            onChange={handleChangeInput}
+            onFocus={handleFocusInput}
+            onBlur={handleBlurInput}
           />
         </div>
 
         <div className={styles.containerInput}>
           <label htmlFor="city">
             City
+
+            {(formErrors.city !== '')
+              && (
+                <span>{formErrors.city}</span>
+              )}
           </label>
 
           <input
@@ -92,13 +145,21 @@ const Checkout = () => {
             name="city"
             id="city"
             placeholder="New York"
-            value=""
+            value={formData.city}
+            onChange={handleChangeInput}
+            onFocus={handleFocusInput}
+            onBlur={handleBlurInput}
           />
         </div>
 
         <div className={styles.containerInput}>
           <label htmlFor="country">
             Country
+
+            {(formErrors.country !== '')
+              && (
+              <span>{formErrors.country}</span>
+              )}
           </label>
 
           <input
@@ -106,7 +167,10 @@ const Checkout = () => {
             name="country"
             id="country"
             placeholder="United States"
-            value=""
+            value={formData.country}
+            onChange={handleChangeInput}
+            onFocus={handleFocusInput}
+            onBlur={handleBlurInput}
           />
         </div>
       </fieldset>
@@ -124,8 +188,9 @@ const Checkout = () => {
                 id="e-money"
                 name="paymentMethod"
                 value="e-money"
+                onChange={handleChangeInput}
+                checked={paymentMethod === 'e-money'}
               />
-
               <span>
                 e-Money
               </span>
@@ -139,8 +204,9 @@ const Checkout = () => {
                 id="cash"
                 name="paymentMethod"
                 value="cash"
+                onChange={handleChangeInput}
+                checked={paymentMethod === 'cash'}
               />
-
               <span>
                 Cash on Delivery
               </span>
@@ -148,7 +214,7 @@ const Checkout = () => {
           </div>
         </div>
 
-        {/* {paymentMethod === 'e-money' ? (
+        {paymentMethod === 'e-money' ? (
           <>
             <div className={styles.containerInput}>
               <label htmlFor="e-moneyNumber">
@@ -204,7 +270,7 @@ const Checkout = () => {
               not be cancelled.
             </p>
           </div>
-        )} */}
+        )}
       </fieldset>
     </div>
   )
