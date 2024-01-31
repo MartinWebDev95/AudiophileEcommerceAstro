@@ -31,7 +31,6 @@ const currentPath = Astro.url.pathname;
 		<main>
 			<slot />
 			
-			<!-- Don't show the following components on the checkout page -->
 			{(currentPath !== '/checkout') && (
 				<CategoriesSection />
 				<slot name="after-categories"/>
