@@ -1,0 +1,46 @@
+---
+import GoBackButton from "../components/GoBackButton";
+import CheckoutForm from "../components/CheckoutForm";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Audiophile E-commerce | Checkout">
+  <GoBackButton client:load />
+
+  <section class="container">
+    <CheckoutForm client:load />
+  </section>
+</Layout>
+
+<style>
+  body{
+    background-color: var(--lightGray);
+  }
+
+  .container{
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+  }
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (min-width: 468px){
+    
+  }
+
+  @media (min-width: 1000px){
+    .container{
+      width: 80%;
+      padding-bottom: 6rem;
+    }
+
+    .form{
+      flex-direction: row;
+    }
+  }
+</style>
