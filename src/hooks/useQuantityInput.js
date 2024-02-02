@@ -24,6 +24,13 @@ function useQuantityInput(initialQuantity = 1, product = {}) {
         totalPriceCart: cart.totalPriceCart + product.price,
       }
     });
+
+    localStorage.setItem('cart', JSON.stringify({
+      cart: {
+        products: newState,
+        totalPriceCart: cart.totalPriceCart + product.price,
+      }
+    }));
   };
 
   const handleDecrement = () => {
@@ -47,6 +54,13 @@ function useQuantityInput(initialQuantity = 1, product = {}) {
         totalPriceCart: cart.totalPriceCart - product.price,
       }
     });
+
+    localStorage.setItem('cart', JSON.stringify({
+      cart: {
+        products: newState,
+        totalPriceCart: cart.totalPriceCart - product.price,
+      }
+    }));
   };
 
   return {

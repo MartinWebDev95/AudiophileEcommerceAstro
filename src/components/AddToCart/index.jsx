@@ -27,6 +27,13 @@ const AddToCart = ({ product }) => {
         totalPriceCart: cart.totalPriceCart + (productCart.quantity * productCart.price),
       },
     });
+
+    localStorage.setItem('cart', JSON.stringify({
+      cart: { 
+        products: [...cart.products, productCart],
+        totalPriceCart: cart.totalPriceCart + (productCart.quantity * productCart.price),
+      }
+    }));
   };
 
   return (
