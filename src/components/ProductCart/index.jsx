@@ -15,13 +15,6 @@ function ProductCart({ item, summary = false }) {
         totalPriceCart: cart.totalPriceCart - (item.price * quantity),
       }
     });
-
-    localStorage.setItem('cart', JSON.stringify({
-      cart: {
-        products: cart.products?.filter((prod) => prod.id !== item.id),
-        totalPriceCart: cart.totalPriceCart - (item.price * quantity),
-      }
-    }));
   }
 
   return (

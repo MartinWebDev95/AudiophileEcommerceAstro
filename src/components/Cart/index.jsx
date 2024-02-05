@@ -3,19 +3,13 @@ import ProductCart from '../ProductCart';
 import styles from './Cart.module.css';
 
 function Cart({ isCartHidden, setIsCartHidden }) {
-  const { cart, setRemoveAllCartProducts, setAddCartProduct } = useCartStore(state => state);
+  const { cart, setRemoveAllCartProducts } = useCartStore(state => state);
 
   const handleCloseCart = (e) => {
     if (!e.target.getAttribute('aria-hidden')) return;
 
     setIsCartHidden(!isCartHidden);
     document.body.style.overflow = 'auto';
-  }
-
-  //Remove all products from the cart
-  const handleClearCart = () => {
-    setRemoveAllCartProducts();
-    localStorage.removeItem('cart');
   }
 
   return (
@@ -41,7 +35,7 @@ function Cart({ isCartHidden, setIsCartHidden }) {
                 <button
                   type="button"
                   className={styles.cartRemoveAll}
-                  onClick={handleClearCart}
+                  onClick={setRemoveAllCartProducts}
                 >
                   Remove all
                 </button>

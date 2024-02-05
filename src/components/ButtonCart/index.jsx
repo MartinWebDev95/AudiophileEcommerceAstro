@@ -6,7 +6,7 @@ import styles from './ButtonCart.module.css';
 function ButtonCart() {
   const { cart } = useCartStore(state => state);
   const [isCartHidden, setIsCartHidden] = useState(true);
-
+  
   const handleOpenCart = () => {
     setIsCartHidden(!isCartHidden);
     document.body.style.overflow = 'hidden';
