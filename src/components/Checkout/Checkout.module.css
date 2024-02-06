@@ -35,6 +35,7 @@
   color: var(--orange);
   font-weight: bold;
   font-size: .9em;
+  width: 100%;
 }
 
 .fieldsetBilling .containerInput, 
