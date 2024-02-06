@@ -6,19 +6,19 @@ const navItems = [
     shop: false,
   },
   {
-    navTo: '/headphones',
+    navTo: '/headphones/',
     image: '/assets/shared/desktop/image-headphones.png',
     navName: 'Headphones',
     shop: true,
   },
   {
-    navTo: '/speakers',
+    navTo: '/speakers/',
     image: '/assets/shared/desktop/image-speakers.png',
     navName: 'Speakers',
     shop: true,
   },
   {
-    navTo: '/earphones',
+    navTo: '/earphones/',
     image: '/assets/shared/desktop/image-earphones.png',
     navName: 'Earphones',
     shop: true,

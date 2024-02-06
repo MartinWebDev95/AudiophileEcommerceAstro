@@ -28,10 +28,10 @@ const currentPath = Astro.url.pathname;
 	<body>
 		<Header />
 
-		<main class={currentPath === '/checkout' ? 'gray' : ''}>
+		<main class={currentPath === '/checkout/' ? 'gray' : ''}>
 			<slot />
 			
-			{(currentPath !== '/checkout') && (
+			{(currentPath !== '/checkout/') && (
 				<CategoriesSection />
 				<slot name="after-categories"/>
 				<PreFooter />
