@@ -27,7 +27,7 @@ const { detail = false, product } = Astro.props;
       </p>
 
       <div class="productLink" transition:name={`product ${product.id} button`}>
-        <Link href={`${product.category}/${product.slug}`} type="primary">
+        <Link href={`/${product.category}/${product.slug}`} type="primary">
           See Product
         </Link>
       </div>
