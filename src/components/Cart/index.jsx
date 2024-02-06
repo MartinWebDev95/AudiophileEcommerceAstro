@@ -63,6 +63,7 @@ function Cart({ isCartHidden, setIsCartHidden }) {
                 <a
                   href="/checkout"
                   className={styles.linkCheckout}
+                  data-astro-reload
                 >
                   Checkout
                 </a>
