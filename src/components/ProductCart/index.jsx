@@ -1,6 +1,6 @@
-import { useCartStore } from '../../store/cartStore';
-import useQuantityInput from '../../hooks/useQuantityInput';
-import QuantityInput from '../QuantityInput';
+import { useCartStore } from '@store/cartStore';
+import useQuantityInput from '@hooks/useQuantityInput';
+import QuantityInput from '@components/QuantityInput';
 import styles from './ProductCart.module.css';
 
 function ProductCart({ item, summary = false }) {

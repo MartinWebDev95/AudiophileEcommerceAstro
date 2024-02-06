@@ -1,5 +1,5 @@
-import { useCartStore } from "../../store/cartStore"
-import ProductCart from "../ProductCart";
+import { useCartStore } from "@store/cartStore"
+import ProductCart from "@components/ProductCart";
 import styles from './Summary.module.css'
 
 const Summary = () => {

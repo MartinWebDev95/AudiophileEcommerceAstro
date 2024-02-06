@@ -1,11 +1,11 @@
 ---
-import data from '../../lib/products.json';
-import Layout from '../../layouts/Layout.astro';
-import FeaturesSection from '../../components/FeaturesSection.astro'
-import ListOfSuggestedProducts from '../../components/ListOfSuggestedProducts.astro'
-import GallerySection from '../../components/GallerySection.astro'
-import GoBackButton from '../../components/GoBackButton'
-import Product from '../../components/Product.astro'
+import data from '@lib/products.json';
+import Layout from '@layouts/Layout.astro';
+import FeaturesSection from '@components/FeaturesSection.astro'
+import ListOfSuggestedProducts from '@components/ListOfSuggestedProducts.astro'
+import GallerySection from '@components/GallerySection.astro'
+import GoBackButton from '@components/GoBackButton'
+import Product from '@components/Product.astro'
 
 export function getStaticPaths() {
   return data.products.map((product) => (

@@ -1,6 +1,6 @@
-import useQuantityInput from '../../hooks/useQuantityInput';
-import { useCartStore } from '../../store/cartStore';
-import QuantityInput from '../QuantityInput';
+import useQuantityInput from '@hooks/useQuantityInput';
+import { useCartStore } from '@store/cartStore';
+import QuantityInput from '@components/QuantityInput';
 import styles from './AddToCart.module.css';
 
 const AddToCart = ({ product }) => {

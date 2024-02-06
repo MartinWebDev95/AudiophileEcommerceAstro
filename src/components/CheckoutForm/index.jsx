@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Checkout from '../Checkout'
-import Summary from '../Summary'
-import useForm from '../../hooks/useForm'
+import Checkout from '@components/Checkout'
+import Summary from '@components/Summary'
+import ResumeModal from '@components/ResumeModal'
+import useForm from '@hooks/useForm'
 import styles from './CheckoutForm.module.css'
-import ResumeModal from '../ResumeModal'
 
 const CheckoutForm = () => {
   const [isResumeHidden, setIsResumeHidden] = useState(true);

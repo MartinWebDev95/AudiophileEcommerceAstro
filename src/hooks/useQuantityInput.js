@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useCartStore } from '../store/cartStore';
+import { useCartStore } from '@store/cartStore';
 
 function useQuantityInput(initialQuantity = 1, product = {}) {
   const { cart, setAddCartProduct } = useCartStore(state => state);

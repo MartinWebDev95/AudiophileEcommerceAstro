@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useCartStore } from '../../store/cartStore';
-import Cart from '../Cart';
+import { useCartStore } from '@store/cartStore';
+import Cart from '@components/Cart';
 import styles from './ButtonCart.module.css';
 
 function ButtonCart() {

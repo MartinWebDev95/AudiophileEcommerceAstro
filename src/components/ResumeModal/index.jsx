@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useCartStore } from '../../store/cartStore';
+import { useCartStore } from '@store/cartStore';
+import ProductCart from '@components/ProductCart';
 import styles from './ResumeModal.module.css';
-import ProductCart from '../ProductCart';
 
 function ResumeModal({ isResumeHidden, setIsResumeHidden }) {
   const { cart, setRemoveAllCartProducts } = useCartStore(state => state);
