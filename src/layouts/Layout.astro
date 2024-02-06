@@ -28,7 +28,7 @@ const currentPath = Astro.url.pathname;
 	<body>
 		<Header />
 
-		<main>
+		<main class={currentPath === '/checkout' ? 'gray' : ''}>
 			<slot />
 			
 			{(currentPath !== '/checkout') && (
@@ -67,7 +67,7 @@ const currentPath = Astro.url.pathname;
 		padding: 0;
 		margin: 0;
 		font-family: 'Manrope', sans-serif;
-		background-color: var(--lightBlack);
+		background-color: var(--white);
 	}
 
 	a{
@@ -101,5 +101,9 @@ const currentPath = Astro.url.pathname;
 	/* Firefox */
 	input[type=number] {
 		-moz-appearance: textfield;
+	}
+
+	.gray{
+		background-color: var(--lightGray);
 	}
 </style>

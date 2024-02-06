@@ -2,39 +2,33 @@
 const { features, includedItems } = Astro.props;
 ---
 
-<section class="sectionFeatures">
-  <div class="sectionFeaturesContainer">
-    <div>
-      <h3>
-        Features
-      </h3>
-      <p class="features">
-        {features}
-      </p>
-    </div>
+<section class="sectionFeaturesContainer">
+  <div>
+    <h3>
+      Features
+    </h3>
+    <p class="features">
+      {features}
+    </p>
+  </div>
 
-    <div>
-      <h3>
-        In the box
-      </h3>
+  <div>
+    <h3>
+      In the box
+    </h3>
 
-      <ul class="listItems">
-        {includedItems.map(({ quantity, item }) => (
-          <li>
-            <span class="itemNumber">{`${quantity}x`}</span>
-            <span class="itemName">{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul class="listItems">
+      {includedItems.map(({ quantity, item }) => (
+        <li>
+          <span class="itemNumber">{`${quantity}x`}</span>
+          <span class="itemName">{item}</span>
+        </li>
+      ))}
+    </ul>
   </div>
 </section>
 
 <style>
-  .sectionFeatures{
-    background-color: var(--white);
-  }
-
   .sectionFeaturesContainer{
     width: 90%;
     margin: 0 auto;

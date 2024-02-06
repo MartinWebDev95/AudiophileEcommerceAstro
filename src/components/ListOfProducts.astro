@@ -10,19 +10,13 @@ const products = data.products
                         .sort((a, b) => b.new - a.new);
 ---
 
-<section class="sectionListProducts">
-  <div class="sectionListContainer">
-    {products.map((product) => (
-      <Product product={product} />
-    ))}
-  </div>
+<section class="sectionListContainer">
+  {products.map((product) => (
+    <Product product={product} />
+  ))}
 </section>
 
 <style>
-  .sectionListProducts{
-    background-color: var(--white);
-  }
-
   .sectionListContainer{
     width: 90%;
     margin: 0 auto;

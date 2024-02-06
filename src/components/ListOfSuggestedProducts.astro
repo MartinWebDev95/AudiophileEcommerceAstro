@@ -4,41 +4,35 @@ import Link from "@components/Link.astro";
 const { suggestedProducts } = Astro.props;
 ---
 
-<section class="sectionSuggestedProducts">
-  <div class="sectionSuggestedProductsContainer">
-    <h3 class="sectionTitle">You may also like</h3>
-  
-    <div class="containerProducts">
-      {suggestedProducts.map((product) => (
-        <div class="product">
-          <picture>
-            <source media="(min-width: 1000px)" srcset={product.image.desktop} />
-  
-            <source media="(min-width: 760px)" srcset={product.image.tablet} />
-  
-            <img src={product.image.mobile} alt={product.name} loading="lazy" />
-          </picture>
-  
-          <div class="productInfo">
-            <h4>{product.name}</h4>
-  
-            <div class="containerProductLink">
-              <Link href={`/${product.slug}`} type="primary">
-                See Product
-              </Link>
-            </div>
+<section class="sectionSuggestedProductsContainer">
+  <h3 class="sectionTitle">You may also like</h3>
+
+  <div class="containerProducts">
+    {suggestedProducts.map((product) => (
+      <div class="product">
+        <picture>
+          <source media="(min-width: 1000px)" srcset={product.image.desktop} />
+
+          <source media="(min-width: 760px)" srcset={product.image.tablet} />
+
+          <img src={product.image.mobile} alt={product.name} loading="lazy" />
+        </picture>
+
+        <div class="productInfo">
+          <h4>{product.name}</h4>
+
+          <div class="containerProductLink">
+            <Link href={`/${product.slug}`} type="primary">
+              See Product
+            </Link>
           </div>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 </section>
 
 <style>
-  .sectionSuggestedProducts{
-    background-color: var(--white);
-  }
-
   .sectionSuggestedProductsContainer{
     width: 90%;
     margin: 0 auto;
