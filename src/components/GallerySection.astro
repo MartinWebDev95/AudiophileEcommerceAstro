@@ -9,7 +9,7 @@ const { gallery } = Astro.props;
     <img srcset={gallery?.first?.mobile} alt="Gallery first" loading="lazy" />
   </picture>
 
-  <picture class="gallerySecon">
+  <picture class="gallerySecond">
     <source media="(min-width: 1000px)" srcset={gallery?.second?.desktop} />
     <source media="(min-width: 480px)" srcset={gallery?.second?.tablet} />
     <img srcset={gallery?.second?.mobile} alt="Gallery second" loading="lazy" />
