@@ -1,17 +1,17 @@
-[Button Language]: https://img.shields.io/badge/Read%20In%20English-000000?style=for-the-badge
+[Button Language]: https://img.shields.io/badge/Leer%20En%20Español-000000?style=for-the-badge
 
-[![Button Language]](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/README.en.md)
+[![Button Language]](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/README.md)
 
 # Audiophile E-commerce                                 
 ---
 
 [Audiophile E-commerce Web]: https://img.shields.io/badge/Audiophile%20Ecommerce%20Web-D87D4A?style=for-the-badge
 
-Este proyecto es un reto de la web [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx) que te proporciona el diseño de la web. Se trata de crear una tienda de dispositivos de audio.
+This project is a challenge from the [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx) website that provides you with the design of the website. It's about creating an audio device store.
 
 [![Audiophile E-commerce Web]](https://audiophile-ecommerce-astro.vercel.app/)
 
-## 👨🏽‍💻 ¿Qué tecnologías he utilizado?
+## 👨🏽‍💻 What technologies have I used?
 ---
 
 [Button Vercel]: https://img.shields.io/badge/Deploy%20on%20Vercel-000000?style=for-the-badge&logo=vercel
@@ -26,15 +26,15 @@ Este proyecto es un reto de la web [Frontend Mentor](https://www.frontendmentor.
 [![Button Zustand]](https://zustand-demo.pmnd.rs/)
 [![Button Vercel]](https://vercel.com/)
 
-- **Astro:** He utilizado Astro como el framework principal del proyecto, creando la gran mayoría de componentes. Astro es un framework que no carga JavaScript por defecto en el cliente, es SSR (Server Side Rendering), y eso provoca que la carga de la web sea prácticamente instantánea.
+- **Astro:**  I have used Astro as the main framework of the project, creating the vast majority of components. Astro is a framework that does not load JavaScript by default on the client, it's SSR (Server Side Rendering), and that causes the loading of the website to be practically instantaneous.
 
-- **React:** He utilizado React para todos los componentes que sean interactivos con el usuario, es decir, todos aquellos componentes que disparen un evento.
+- **React:** I have used React for all components that are interactive with the user, that is, all those components that trigger an event.
 
-- **CSS Modules:** He usado CSS Modules para darle estilos a los componentes de React.
+- **CSS Modules:** I have used CSS Modules to style React components.
 
-- **Zustand:** He usado Zustand para manejar el estado global del carrito de compras. Zustand es una solución de gestión de estados pequeña, rápida y escalable. Su gestión de estado es centralizada y basada en acciones.
+- **Zustand:** I have used Zustand to manage the global shopping cart state. Zustand is a small, fast and scalable state management solution. Its state management is centralized and action-based.
 
-## 📸 Algunas capturas del proyecto!
+## 📸 Some Screenshots!
 ---
 
 ![Hero Section Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/heroSection.png)
@@ -47,10 +47,10 @@ Este proyecto es un reto de la web [Frontend Mentor](https://www.frontendmentor.
 
 ![Checkout Page Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/checkoutPage.png)
 
-## 🗃️ Estructura del proyecto
+## 🗃️ Project Structure
 ---
 
-Esta es la estructura que he utilizado en este proyecto:
+This is the structure that I have used in this project:
 
 ```text
 /
@@ -84,9 +84,9 @@ Esta es la estructura que he utilizado en este proyecto:
 └── package.json
 ```
 
-## 👀 ¿Dónde puedes encontrarme?
+## 👀 Where you can find me?
 ---
 
-[Button Portfolio]: https://img.shields.io/badge/Visita%20mi%20Portfolio-000000?style=for-the-badge
+[Button Portfolio]: https://img.shields.io/badge/Visit%20my%20Portfolio-000000?style=for-the-badge
 
 [![Button Portfolio]](https://my-portolio-martinwebdev95.vercel.app/)
