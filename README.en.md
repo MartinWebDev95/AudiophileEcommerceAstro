@@ -47,6 +47,8 @@ This project is a challenge from the [Frontend Mentor](https://www.frontendmento
 
 ![Checkout Page Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/checkoutPage.png)
 
+![Checkout Page Error Screenshot](https://github.com/MartinWebDev95/AudiophileEcommerceAstro/blob/main/public/assets/screenshots/checkoutPageError.png)
+
 ## 🗃️ Project Structure
 ---
 
