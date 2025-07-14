@@ -150,12 +150,21 @@ const { detail = false, product } = Astro.props;
     .containerProduct:last-of-type{
       padding-bottom: 4rem;
     }
-    
+
+    .containerProduct picture img {
+      aspect-ratio: 16/9;
+    } 
+
+    .containerProductDetail picture img{
+      aspect-ratio: 1/2;
+    }
+
     .containerProductDetail{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 4rem;
     }
+
   }
 
   /* DESKTOP */
@@ -164,6 +173,10 @@ const { detail = false, product } = Astro.props;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 4rem;
+    }
+
+    .containerProduct picture img, .containerProductDetail picture img{
+      aspect-ratio: 1/1;
     }
 
     .containerProductDetail{
